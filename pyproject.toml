@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "giza-datasets"
+version = "0.1.0"
+description = ""
+authors = ["Fran Algaba <f.algaba@outlook.es>"]
+readme = "README.md"
+license = "MIT"
+include = ["datasets/*"]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+polars = "^0.20.3"
+gcsfs = "^2023.12.2.post1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
