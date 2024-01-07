@@ -16,6 +16,10 @@ gcsfs = "^2023.12.2.post1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.4"
+pre-commit = "^3.6.0"
+ruff = "^0.1.11"
+black = "^23.12.1"
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
