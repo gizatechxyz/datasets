@@ -1,3 +1,4 @@
-from datasets.main import DatasetLoader
+from datasets.hub import DatasetsHub
+from datasets.loaders import DatasetLoader
 
-__all__ = ["DatasetLoader"]
+__all__ = ["DatasetLoader", "DatasetsHub"]

@@ -12,6 +12,8 @@ include = ["datasets/*"]
 python = "^3.11"
 polars = "^0.20.3"
 gcsfs = "^2023.12.2.post1"
+pydantic = "^2.5.3"
+rich = "^13.7.0"
 
 
 [tool.poetry.group.dev.dependencies]

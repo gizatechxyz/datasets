@@ -38,6 +38,42 @@ To get started with Giza Datasets, follow the steps below:
 
 Start exploring the datasets and building your machine learning models with ease!
 
+## Datasets Hub
+
+The `DatasetsHub` class provides methods to manage and access datasets. Here are some of its methods:
+
+- `show()`: Prints a table of all datasets in the hub.
+- `list()`: Returns a list of all datasets in the hub.
+- `get(dataset_name)`: Returns a Dataset object with the given name.
+- `describe(dataset_name)`: Prints a table of details for the given dataset.
+
+To get started with the `DatasetsHub` class, follow the steps below:
+
+1. Import the `DatasetsHub` class and initialize it:
+   ```python
+   from datasets import DatasetsHub
+   hub = DatasetsHub()
+   ```
+2. Use the `show` method to print a table of all datasets in the hub:
+   ```python
+   hub.show()
+   ```
+3. Use the `list` method to get a list of all datasets in the hub:
+   ```python
+   datasets = hub.list()
+   print(datasets)
+   ```
+4. Use the `get` method to get a Dataset object with a given name:
+   ```python
+   dataset = hub.get('dataset1')
+   print(dataset)
+   ```
+5. Use the `describe` method to print a table of details for a given dataset:
+   ```python
+   hub.describe('dataset1')
+   ```
+
+
 ## Contributing
 
 We welcome contributions to the Giza Datasets repository. If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
