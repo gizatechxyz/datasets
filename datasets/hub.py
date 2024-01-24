@@ -76,6 +76,7 @@ class DatasetsHub:
 
         table.add_row("Path", dataset.path)
         table.add_row("Description", dataset.description)
+        table.add_row("Labels", dataset.labels)
         table.add_row("Documentation", dataset.documentation)
 
         console = Console()
