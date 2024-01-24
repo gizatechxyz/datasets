@@ -1,5 +1,5 @@
 from pydantic import BaseModel, validator
-from typing import List
+from typing import List, Optional
 
 dataset_labels = {"label1", "label2"}
 
@@ -11,14 +11,14 @@ class Dataset(BaseModel):
         name (str): The name of the dataset.
         path (str): The path to the dataset.
         description (str): A brief description of the dataset.
-        labels Optional[Set[str]]: Optional, predefined set of labels associated with the dataset.
+        labels Optional[List[str]]: Optional, predefined list of labels associated with the dataset.
         documentation (str): The documentation associated with the dataset.
     """
 
     name: str
     path: str
     description: str
-    labels: List[str] = []
+    labels: Optional[List[str]]
     documentation: str
 
     @validator("labels", pre=True, always=True)
