@@ -1,8 +1,7 @@
 from pydantic import BaseModel, validator
-from typing import Set, Optional
+from typing import List
 
 dataset_labels = {"label1", "label2"}
-
 
 class Dataset(BaseModel):
     """
@@ -19,14 +18,14 @@ class Dataset(BaseModel):
     name: str
     path: str
     description: str
-    labels: Optional[Set[str]] = set()
+    labels: List[str] = []
     documentation: str
 
     @validator("labels", pre=True, always=True)
     def validate_labels(cls, value):
         # If labels are provided, ensure they are valid labels
         if value:
-            invalid_labels = value - dataset_labels
+            invalid_labels = set(value) - dataset_labels
             if invalid_labels:
                 raise ValueError(f"Invalid labels: {', '.join(invalid_labels)}")
         return value
