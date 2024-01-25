@@ -71,4 +71,19 @@ DATASET_HUB = [
         labels=["label1", "label2"],    
         documentation="Documentation for dataset3",
     ),
+    Dataset(
+        name="Balancer_Daily_Swap_Fees",
+        path="https://storage.googleapis.com/datasets-giza/Balancer/Balancer_Daily_Swap_Fees.parquet",
+        description="Daily average swap fees per pool in Balancer",
+        labels=["label1", "label2"],    
+        documentation="Documentation for dataset3",
+    ),
+    Dataset(
+        name="Balancer_Daily_Trade_Volume",
+        path="https://storage.googleapis.com/datasets-giza/Balancer/Balancer_Daily_Trade_Volume.parquet",
+        description="Daily aggregate trading volume per pool in Balancer",
+        labels=["label1", "label2"],    
+        documentation="Documentation for dataset3",
+    ),
+
 ]
