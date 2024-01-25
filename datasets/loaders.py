@@ -2,7 +2,6 @@ import gcsfs
 import polars as pl
 
 from datasets.constants import DATASET_HUB
-from datasets.hub import DatasetsHub as dh
 
 
 class DatasetLoader:
