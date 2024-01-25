@@ -2,6 +2,7 @@ import gcsfs
 import polars as pl
 
 from datasets.constants import DATASET_HUB
+from datasets.hub import DatasetsHub as dh
 
 
 class DatasetLoader:
@@ -21,18 +22,22 @@ class DatasetLoader:
     """
 
     def __init__(self):
-        self.fs = gcsfs.GCSFileSystem(token="anon")
+        self.fs = gcsfs.GCSFileSystem(verify = False)
         self.dataset_hub = DATASET_HUB
 
     def load(self, dataset_name, eager=True):
-        if dataset_name not in self.dataset_hub:
-            raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")
-
-        gcs_path = self.dataset_hub[dataset_name]
-
-        with self.fs.open(gcs_path) as f:
-            if eager:
-                df = pl.read_parquet(f)
-            else:
-                df = pl.scan_parquet(f)
-        return df
+        gcs_path = None
+        for dataset in self.dataset_hub:
+            if dataset.name == dataset_name:
+                gcs_path = dataset.path
+                break
+        
+        if not gcs_path:
+            raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")        
+        else:
+             with self.fs.open(gcs_path) as f:
+                if eager:
+                    df = pl.read_parquet(gcs_path, use_pyarrow = True)
+                else:
+                    df = pl.scan_parquet(f)
+                return df
