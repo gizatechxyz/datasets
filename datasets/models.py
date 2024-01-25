@@ -1,7 +1,8 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
-dataset_labels = {"label1", "label2"}
+dataset_tags = {"tag1", "tag2"}  # Currently the correct usage of tags in the contants.py is not enforced
+
 
 class Dataset(BaseModel):
     """
@@ -18,7 +19,7 @@ class Dataset(BaseModel):
     name: str
     path: str
     description: str
-    labels: Optional[List[str]]
+    tags: Optional[List[str]]
     documentation: str
 
     
