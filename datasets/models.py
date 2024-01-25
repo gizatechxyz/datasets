@@ -1,7 +1,7 @@
 from pydantic import BaseModel, validator
 from typing import List, Optional
 
-dataset_labels = {"label1", "label2"}
+dataset_labels = {"aggregated", "daily", "TVL"} #TODO
 
 class Dataset(BaseModel):
     """
