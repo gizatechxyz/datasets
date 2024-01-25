@@ -36,7 +36,7 @@ class DatasetLoader:
         else:
              with self.fs.open(gcs_path) as f:
                 if eager:
-                    df = pl.read_parquet(gcs_path, use_pyarrow = True)
+                    df = pl.read_parquet(f, use_pyarrow = True)
                 else:
                     df = pl.scan_parquet(f)
                 return df
