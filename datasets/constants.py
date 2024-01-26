@@ -38,7 +38,7 @@ DATASET_HUB = [
         name="top_pools_APY_per_protocol",
         path="gs://datasets-giza/top_pools_APY_per_protocol",
         description="Description for dataset3",
-        tags=["aggregated", "daily", "APY"],
+        tags=["aggregated", "daily", "APY"] + DEFILLAMA_SUPPORTED_PROJECTS + APPLICATION_TAGS,
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
 
