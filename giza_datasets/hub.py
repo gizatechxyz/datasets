@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 
-from datasets.constants import DATASET_HUB
+from giza_datasets.constants import DATASET_HUB
 
 
 class DatasetsHub:
@@ -77,7 +77,7 @@ class DatasetsHub:
         table.add_row("Path", dataset.path)
         table.add_row("Description", dataset.description)
         rendered_string = ", ".join(str(item) for item in dataset.tags)
-        table.add_row("Tags", rendered_string )
+        table.add_row("Tags", rendered_string)
         table.add_row("Documentation", dataset.documentation)
 
         console = Console()

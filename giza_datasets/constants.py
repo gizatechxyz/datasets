@@ -1,4 +1,4 @@
-from datasets.models import Dataset
+from giza_datasets.models import Dataset
 
 DATASET_HUB = [
     Dataset(

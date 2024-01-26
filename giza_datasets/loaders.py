@@ -1,7 +1,7 @@
 import gcsfs
 import polars as pl
 
-from datasets.constants import DATASET_HUB
+from giza_datasets.constants import DATASET_HUB
 
 
 class DatasetLoader:

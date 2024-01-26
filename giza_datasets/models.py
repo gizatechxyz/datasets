@@ -1,12 +1,36 @@
-from pydantic import BaseModel
 from typing import List, Optional
 
- 
+from pydantic import BaseModel
+
 sector_tags = {"DeFi"}
-application_tags = {"Lending","DEX","Yield"}
-protocol_tags = {"Aave-v2","Aave-v3","Compound-v2","Balancer-v1","Balancer-v2","MorphoBlue","Uniswap-v3"}
-network_tags = {"Ethereum", "Arbitrum", "Optimism", "Avalanche", "Base", "Gnosis", "Polygon"}
-task_tags = {"TVL","Token Price","Swap Fees","Liquidity","Borrows & Deposits","Trade Volume"}
+application_tags = {"Lending", "DEX", "Yield"}
+protocol_tags = {
+    "Aave-v2",
+    "Aave-v3",
+    "Compound-v2",
+    "Balancer-v1",
+    "Balancer-v2",
+    "MorphoBlue",
+    "Uniswap-v3",
+}
+network_tags = {
+    "Ethereum",
+    "Arbitrum",
+    "Optimism",
+    "Avalanche",
+    "Base",
+    "Gnosis",
+    "Polygon",
+}
+task_tags = {
+    "TVL",
+    "Token Price",
+    "Swap Fees",
+    "Liquidity",
+    "Borrows & Deposits",
+    "Trade Volume",
+}
+
 
 class Dataset(BaseModel):
     """
@@ -25,5 +49,3 @@ class Dataset(BaseModel):
     description: str
     tags: Optional[List[str]]
     documentation: str
-
-    
