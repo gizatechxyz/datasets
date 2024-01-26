@@ -87,119 +87,119 @@ DATASET_HUB = [
         tags=["aggregated", "daily", "TVL", "aave-v3"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=aura",
         path="gs://datasets-giza/TVL_per_project_tokens/project=aura",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "aura"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=balancer-v2",
         path="gs://datasets-giza/TVL_per_project_tokens/project=balancer-v2",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "balancer-v2"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=beefy",
         path="gs://datasets-giza/TVL_per_project_tokens/project=beefy",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "beefy"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=benqi-lending",
         path="gs://datasets-giza/TVL_per_project_tokens/project=benqi-lending",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "benqi-lending"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=coinwind",
         path="gs://datasets-giza/TVL_per_project_tokens/project=coinwind",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "coinwind"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=compound-v2",
         path="gs://datasets-giza/TVL_per_project_tokens/project=compound-v2",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "compound-v2"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=convex-finance",
         path="gs://datasets-giza/TVL_per_project_tokens/project=convex-finance",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "convex-finance"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=curve-dex",
         path="gs://datasets-giza/TVL_per_project_tokens/project=curve-dex",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "curve-dex"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=flamincome",
         path="gs://datasets-giza/TVL_per_project_tokens/project=flamincome",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "flamincome"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=lido",
         path="gs://datasets-giza/TVL_per_project_tokens/project=lido",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "lido"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=pancakeswap-amm",
         path="gs://datasets-giza/TVL_per_project_tokens/project=pancakeswap-amm",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "pancakeswap-amm"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=pendle",
         path="gs://datasets-giza/TVL_per_project_tokens/project=pendle",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "pendle"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=rocket-pool",
         path="gs://datasets-giza/TVL_per_project_tokens/project=rocket-pool",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "rocket-pool"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=sushiswap",
         path="gs://datasets-giza/TVL_per_project_tokens/project=sushiswap",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "sushiswap"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=uniswap-v2",
         path="gs://datasets-giza/TVL_per_project_tokens/project=uniswap-v2",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "uniswap-v2"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=uniswap-v3",
         path="gs://datasets-giza/TVL_per_project_tokens/project=uniswap-v3",
         description="Description for dataset3",
         tags=["aggregated", "daily", "TVL", "uniswap-v3"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
-        Dataset(
+    Dataset(
         name="TVL_per_project_tokens/project=yearn-finance",
         path="gs://datasets-giza/TVL_per_project_tokens/project=yearn-finance",
         description="Description for dataset3",
@@ -289,7 +289,7 @@ DATASET_HUB = [
     ),
     Dataset(
         name="Compound_daily_interest_rates",
-        path="https://storage.googleapis.com/datasets-giza/CompoundV2/compound_v2_rates.parquet",
+        path="gs://datasets-giza/CompoundV2/compound_v2_rates.parquet",
         description="Daily interest rates for each Compound V2 market on Ethereum mainnet",
         tags=["DeFi", "Compound-v2", "Ethereum", "Interest Rates", "Lending"],
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/compound-v2-interest-rates",
