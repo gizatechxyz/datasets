@@ -1,6 +1,48 @@
 from datasets.models import Dataset
 
+DEFILLAMA_SUPPORTED_PROJECTS = [
+    "Lido", "Rocket-pool", "Binance-staked-eth", "Mantle-staked-eth", "Frax-ether",
+    "Uniswap-v3", "Curve-dex", "Uniswap-v2", "Pancakeswap-amm", "Balancer-v2", "Pancakeswap-amm-v3", "Sushiswap", "Thorchain",
+    "Convex-finance", "Stakestone", "Aura", "Pendle", "Coinwind", "Penpie",
+    "Aave-v3", "Aave-v2", "Spark", "Compound-v3", "Compound-v2", "Morpho-aave", "Morpho-aavev3", "Benqi-lending", "Radiant-v2",
+    "Yearn-finance", "Beefy", "Origin-ether", "Flamincome", "Sommelier"
+]
+
+APPLICATION_TAGS = ["Liquid Staking", "Dexes", "Yield", "Lending", "Yield Aggregator"]
+
+from datasets.models import Dataset
+
 DATASET_HUB = [
+    Dataset(
+        name="TVL_fee_per_protocol",
+        path="gs://datasets-giza/TVL_fee_per_protocol",
+        description="Description for dataset1",
+        tags=["aggregated", "daily", "TVL", "Fees", "Multi-chain"] + DEFILLAMA_SUPPORTED_PROJECTS + APPLICATION_TAGS,
+        documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/tvl-and-fees-per-protocol",
+    ),
+    Dataset(
+        name="TVL_per_project_tokens",
+        path="gs://datasets-giza/TVL_per_project_tokens",
+        description="Description for dataset2",
+        tags=["aggregated", "daily", "TVL"],
+        documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/tvl-for-each-token-by-protocol",
+    ),
+    Dataset(
+        name="tokens_OHCL",
+        path="gs://datasets-giza/tokens_OHCL/tokens_OHCL.parquet",
+        description="Description for dataset3",
+        tags=["aggregated", "daily", "Token Price"],
+        documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/tokens-ohlc-price",
+    ),
+    Dataset(
+        name="top_pools_APY_per_protocol",
+        path="gs://datasets-giza/top_pools_APY_per_protocol",
+        description="Description for dataset3",
+        tags=["aggregated", "daily", "APY"] + DEFILLAMA_SUPPORTED_PROJECTS + APPLICATION_TAGS,
+        documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
+    ),
+
+
     Dataset(
         name="aave-daily-deposits-borrowsV2",
         path="gs://datasets-giza/Aave/Aave_Daily_Deposits_BorrowsV2.parquet",
@@ -2001,3 +2043,4 @@ DATASET_HUB = [
         documentation="https://datasets.gizatech.xyz/hub-pending/uniswap-v3-liquidity-distribution",
     ),
 ]
+
