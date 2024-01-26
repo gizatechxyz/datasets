@@ -295,6 +295,13 @@ DATASET_HUB = [
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/compound-v2-interest-rates",
     ),
     Dataset(
+        name="UniswapV3_ethereum_pools_info",
+        path="gs://datasets-giza/UniswapV3/pools_info.parquet",
+        description="Information about Uniswap V3 pools on ethereum",
+        tags=['DeFi', "Uniswap-v3", "Ethereum", "DEX"],
+        documentation="https://datasets.gizatech.xyz/hub-pending/uniswap-v3-liquidity-distribution",
+    ),
+    Dataset(
         name="UniswapV3_ethereum_ARKM_WETH_10000_liquidity_snapshots",
         path="gs://datasets-giza/UniswapV3/ethereum/ARKM_WETH_10000/merged_snaps_17718859_18083859.parquet",
         description="Snapshots of Uniswap V3 liquidity distribution in 1000 blocks intervals for ARKM-WETH pool with 1.0 % fee",
