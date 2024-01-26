@@ -27,7 +27,7 @@ jobs:
           poetry install
       - name: Lint with ruff
         run: |
-          poetry run ruff giza_actions
+          poetry run ruff giza_datasets
       # Bring back when tests area working
       # - name: Testing
       #   run: |
