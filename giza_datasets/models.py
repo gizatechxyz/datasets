@@ -2,8 +2,20 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-dataset_labels = ["aggregated", "daily", "TVL", "APY"]  # TODO
+from giza_datasets.defillama_constants import DEFILLAMA_SUPPORTED_PROJECTS
+
 sector_tags = ["DeFi"]
+application_tags = ["Liquid Staking", "Dexes", "Yield", "Lending", "Yield Aggregator"]
+protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + [
+    "Aave-v2",
+    "Aave-v3",
+    "Compound-v2",
+    "Balancer-v1",
+    "Balancer-v2",
+    "MorphoBlue",
+    "Uniswap-v3",
+    "Yearn-v2",
+]
 network_tags = [
     "Ethereum",
     "Arbitrum",
@@ -23,6 +35,10 @@ task_tags = [
     "Trade Volume",
     "Fees",
     "APY",
+    "daily",
+    "aggregated",
+    "Deposits",
+    "Withdraws",
 ]
 
 
