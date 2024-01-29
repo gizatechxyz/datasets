@@ -1,13 +1,14 @@
 from pydantic import BaseModel
 from typing import List, Optional
-#from datasets.constants import APPLICATION_TAGS, DEFILLAMA_SUPPORTED_PROJECTS
+from datasets.constants import  DEFILLAMA_SUPPORTED_PROJECTS
 
-dataset_labels = ["aggregated", "daily", "TVL", "APY"] #TODO
+
 sector_tags = ["DeFi"]
-#application_tags = APPLICATION_TAGS
-#protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + ["Balancer-v1","Balancer-v2","MorphoBlue"] 
+application_tags = ["Liquid Staking", "Dexes", "Yield", "Lending", "Yield Aggregator"]
+protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + ["Aave-v2","Aave-v3","Compound-v2","Balancer-v1","Balancer-v2","MorphoBlue","Uniswap-v3","Yearn-v2"] 
 network_tags = ["Ethereum", "Arbitrum", "Optimism", "Avalanche", "Base", "Gnosis", "Polygon", "multi-chain"]
-task_tags = ["TVL","Token Price","Swap Fees","Liquidity","Borrows & Deposits","Trade Volume", "Fees", "APY"]
+task_tags = ["TVL","Token Price","Swap Fees","Liquidity","Borrows & Deposits","Trade Volume", "Fees", "APY","daily","aggregated","Deposits","Withdraws"]
+
 
 class Dataset(BaseModel):
     """
