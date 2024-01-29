@@ -43,5 +43,33 @@ DATASET_HUB = [
         tags=["DeFi","DEX","Balancer-v1","Balancer-v2","Ethereum","Arbitrum","Optimism","Avalanche","Base","Gnosis","Polygon","Trade Volume"],    
         documentation="https://datasets.gizatech.xyz/hub/balancer/daily-trade-volume",
     ),
+    Dataset(
+        name="yearn-individual-deposits",
+        path="gs://datasets-giza/Yearn/Yearn_Individual_Deposits.parquet",
+        description="Individual Yearn Vault deposits",
+        tags=["DeFi","Yield","Yearn-v2","Ethereum","Deposits"],    
+        documentation="https://datasets.gizatech.xyz/hub/yearn/yearn-individual-deposits",
+    ),
+    Dataset(
+        name="yearn-individual-withdraws",
+        path="gs://datasets-giza/Yearn/Yearn_Individual_Withdraws.parquet",
+        description="Individual Yearn Vault withdraws",
+        tags=["DeFi","Yield","Yearn-v2","Ethereum","Withdraws"],  
+        documentation="https://datasets.gizatech.xyz/hub/yearn/yearn-individual-withdraws",
+    ),
+    Dataset(
+        name="yearn-strategy-borrows",
+        path="gs://datasets-giza/Yearn/Yearn_Strategy_Borrows.parquet",
+        description="Individual Yearn Vault withdraws from the associated Yearn Strategies",
+        tags=["DeFi","Yield","Yearn-v2","Ethereum","Withdraws"],    
+        documentation="https://datasets.gizatech.xyz/hub/yearn/yearn-strategy-borrows",
+    ),
+    Dataset(
+        name="yearn-strategy-returns",
+        path="gs://datasets-giza/Yearn/Yearn_Strategy_Returns.parquet",
+        description="Individual Yearn Vault deposits from the associated Yearn Strategies",
+        tags=["DeFi","Yield","Yearn-v2","Ethereum","Deposits"],  
+        documentation="https://datasets.gizatech.xyz/hub/yearn/yearn-strategy-returns",
+    ),
 
 ]

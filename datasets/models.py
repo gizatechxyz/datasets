@@ -4,9 +4,9 @@ from typing import List, Optional
  
 sector_tags = {"DeFi"}
 application_tags = {"Lending","DEX","Yield"}
-protocol_tags = {"Aave-v2","Aave-v3","Compound-v2","Balancer-v1","Balancer-v2","MorphoBlue","Uniswap-v3"}
+protocol_tags = {"Aave-v2","Aave-v3","Compound-v2","Balancer-v1","Balancer-v2","MorphoBlue","Uniswap-v3","Yearn-v2"}
 network_tags = {"Ethereum", "Arbitrum", "Optimism", "Avalanche", "Base", "Gnosis", "Polygon"}
-task_tags = {"TVL","Token Price","Swap Fees","Liquidity","Borrows & Deposits","Trade Volume"}
+task_tags = {"TVL","Token Price","Swap Fees","Liquidity","Borrows & Deposits","Trade Volume","Deposits","Withdraws"}
 
 class Dataset(BaseModel):
     """
