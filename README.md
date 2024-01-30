@@ -32,7 +32,7 @@ To get started with Giza Datasets, follow the steps below:
    os.environ['SSL_CERT_FILE'] = certifi.where()
    ```
 
-4. Load a dataset using the `load_parquet` method. For example, to load `tvl-fee-per-protocol`:
+4. Load a dataset using the `load` method. For example, to load `tvl-fee-per-protocol`:
    ```python
    df = loader.load('tvl-fee-per-protocol')
    ```
