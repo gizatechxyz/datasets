@@ -53,7 +53,7 @@ class DatasetsHub:
         for dataset in self.datasets:
             all_tags.update(dataset.tags)
 
-        return list(all_tags) 
+        return list(all_tags)
 
     def get(self, dataset_name):
         """
@@ -70,7 +70,7 @@ class DatasetsHub:
             raise ValueError(f"Dataset name '{dataset_name}' not found.")
 
         return dataset
-    
+
     def get_by_tag(self, dataset_tag):
         """
         Returns a list of Dataset objects with the given tag.
