@@ -5,8 +5,7 @@ from datasets import DatasetLoader
 # Usage example:
 loader = DatasetLoader()
 
-# Use eager=False to use the lazy API
-df = loader.load('dataset1', eager=False)
+df = loader.load('tvl-fee-per-protocol')
 print(df)  # This will print a LazyFrame object
 
 # If you want to collect the results into a DataFrame, you can call .collect()
