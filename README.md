@@ -2,7 +2,7 @@
 
 Welcome to the Giza Datasets repository. Here you can find a collection of datasets ready to be used for blockchain ML use cases. Familiarize yourself with the ease of using dataframes through our `DatasetLoader` class. 
 
-Before discovering how our library works, if you want to find detailed information about each dataset provided by Giza, access our [documentation](https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/welcome/giza-datasets)! You will find usage examples for each dataset, the schema of each one with descriptions of every field, the relationship between the datasets, potential use cases for them, and much more!
+Before discovering how our library works, if you want to find detailed information about each dataset provided by Giza, access our [documentation](https://datasets.gizatech.xyz/welcome/giza-datasets)! You will find usage examples for each dataset, the schema of each one with descriptions of every field, the relationship between the datasets, potential use cases for them, and much more!
 
 ## Enhanced Features
 
