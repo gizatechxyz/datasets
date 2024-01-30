@@ -1,9 +1,9 @@
 import polars as pl
 
-from datasets import DatasetLoader
+from datasets import DatasetsLoader
 
 # Usage example:
-loader = DatasetLoader()
+loader = DatasetsLoader()
 
 df = loader.load('tvl-fee-per-protocol')
 print(df)  # This will print a LazyFrame object

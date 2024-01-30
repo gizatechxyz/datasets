@@ -1,6 +1,6 @@
 # Giza Datasets
 
-Welcome to the Giza Datasets repository. Here you can find a collection of datasets ready to be used for blockchain ML use cases. Familiarize yourself with the ease of using dataframes through our `DatasetLoader` class.
+Welcome to the Giza Datasets repository. Here you can find a collection of datasets ready to be used for blockchain ML use cases. Familiarize yourself with the ease of using dataframes through our `DatasetsLoader` class.
 
 Before discovering how our library works, if you want to find detailed information about each dataset provided by Giza, access our [documentation](https://datasets.gizatech.xyz/welcome/giza-datasets)! You will find usage examples for each dataset, the schema of each one with descriptions of every field, the relationship between the datasets, potential use cases for them, and much more!
 
@@ -9,7 +9,7 @@ Before discovering how our library works, if you want to find detailed informati
 Explore the robust capabilities of the Giza Datasets repository:
 
 - **Streamlined Dataset Access**: Instantly connect to a curated collection of blockchain datasets, ready for machine learning applications, with no configuration needed.
-- **Effortless Data Loading**: Utilize the `DatasetLoader` class to easily load Parquet files, streamlining your data workflow.
+- **Effortless Data Loading**: Utilize the `DatasetsLoader` class to easily load Parquet files, streamlining your data workflow.
 - **Optimized Data Handling**: Leverage the integration with the [polars library](https://www.pola.rs/), designed for efficient manipulation of large datasets. For detailed guidance on using polars for dataset operations, refer to the [polars documentation](https://docs.pola.rs/py-polars/).
 
 ## Quick Start
@@ -20,10 +20,10 @@ To get started with Giza Datasets, follow the steps below:
    ```
    pip install giza-datasets
    ```
-2. Import the `DatasetLoader` class and initialize it:
+2. Import the `DatasetsLoader` class and initialize it:
    ```python
-   from datasets import DatasetLoader
-   loader = DatasetLoader()
+   from datasets import DatasetsLoader
+   loader = DatasetsLoader()
    ```
 3. Optional: Depending on your device's configuration, it may be necessary to provide SSL certificates to verify the authenticity of HTTPS connections. You can ensure that all these certifications are correct by executing the following line of code:
    ```python
