@@ -1,7 +1,7 @@
 import polars as pl
 import pytest
 
-from datasets import DatasetLoader
+from giza_datasets import DatasetLoader
 
 
 def test_load_dataset_eager():

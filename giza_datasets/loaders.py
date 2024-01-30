@@ -1,6 +1,8 @@
 import gcsfs
 import polars as pl
-from datasets.constants import DATASET_HUB
+
+from giza_datasets.constants import DATASET_HUB
+
 
 class DatasetLoader:
     """
@@ -19,10 +21,10 @@ class DatasetLoader:
     def _get_all_parquet_files(self, directory):
         """
         Recursively retrieves all the parquet file paths in the given directory.
-        
+
         Args:
             directory: The GCS directory to search for parquet files.
-        
+
         Returns:
             A list of full paths to all the parquet files found.
         """
@@ -30,13 +32,13 @@ class DatasetLoader:
         parquet_files = []
 
         for file_info in all_files:
-            if file_info['type'] == 'directory':
-                parquet_files.extend(self._get_all_parquet_files(file_info['name']))
-            elif file_info['name'].endswith('.parquet'):
-                full_path = 'gs://' + file_info['name']
+            if file_info["type"] == "directory":
+                parquet_files.extend(self._get_all_parquet_files(file_info["name"]))
+            elif file_info["name"].endswith(".parquet"):
+                full_path = "gs://" + file_info["name"]
                 parquet_files.append(full_path)
         return parquet_files
-    
+
     def _load_multiple_parquet_files(self, file_paths, eager=True):
         """
         Loads multiple parquet files into a single Polars DataFrame.
@@ -44,7 +46,7 @@ class DatasetLoader:
         Args:
             file_paths: A list of file paths to load.
             eager: If True, data is loaded eagerly. If False, a lazy DataFrame is returned.
-        
+
         Returns:
             A concatenated Polars DataFrame containing data from all files.
         """
@@ -70,7 +72,7 @@ class DatasetLoader:
 
         Returns:
             A Polars DataFrame containing the loaded dataset.
-        
+
         Raises:
             ValueError: If the dataset name is not found or if no parquet files are found.
         """
@@ -79,10 +81,10 @@ class DatasetLoader:
             if dataset.name == dataset_name:
                 gcs_path = dataset.path
                 break
-        
+
         if not gcs_path:
-            raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")        
-        elif gcs_path.endswith('.parquet'):
+            raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")
+        elif gcs_path.endswith(".parquet"):
             with self.fs.open(gcs_path) as f:
                 if eager:
                     df = pl.read_parquet(f, use_pyarrow=True)
@@ -91,10 +93,14 @@ class DatasetLoader:
         else:
             parquet_files = self._get_all_parquet_files(gcs_path)
             if not parquet_files:
-                raise ValueError("No .parquet files were found in the directory or subdirectories.")
+                raise ValueError(
+                    "No .parquet files were found in the directory or subdirectories."
+                )
             if eager:
                 df = self._load_multiple_parquet_files(parquet_files, eager=eager)
             else:
-                raise ValueError("Only eager=True is supported for loading multiple parquet files.") 
+                raise ValueError(
+                    "Only eager=True is supported for loading multiple parquet files."
+                )
 
         return df
