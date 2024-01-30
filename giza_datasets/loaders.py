@@ -4,15 +4,15 @@ import polars as pl
 from giza_datasets.constants import DATASET_HUB
 
 
-class DatasetLoader:
+class DatasetsLoader:
     """
-    DatasetLoader is a class for loading datasets from Google Cloud Storage (GCS).
+    DatasetsLoader is a class for loading datasets from Google Cloud Storage (GCS).
     It uses the GCSFileSystem for accessing files and Polars for handling data.
     """
 
     def __init__(self):
         """
-        Initializes the DatasetLoader with a GCS filesystem and the dataset configuration.
+        Initializes the DatasetsLoader with a GCS filesystem and the dataset configuration.
         Verification is turned off for the GCS filesystem.
         """
         self.fs = gcsfs.GCSFileSystem(verify=False)
