@@ -44,6 +44,17 @@ class DatasetsHub:
         """
         return self.datasets
 
+    def list_tags(self):
+        """
+        Returns a list of all tags in the hub.
+        """
+        all_tags = set()  # Using a set to automatically remove duplicates
+
+        for dataset in self.datasets:
+            all_tags.update(dataset.tags)
+
+        return list(all_tags) 
+
     def get(self, dataset_name):
         """
         Returns a Dataset object with the given name.
@@ -59,6 +70,22 @@ class DatasetsHub:
             raise ValueError(f"Dataset name '{dataset_name}' not found.")
 
         return dataset
+    
+    def get_by_tag(self, dataset_tag):
+        """
+        Returns a list of Dataset objects with the given tag.
+
+        Args:
+            dataset_name (str): Tag to query the datasets.
+
+        Raises:
+            ValueError: If no dataset with the given tag is found.
+        """
+        datasets = [d for d in self.datasets if dataset_tag in d.tags]
+        if datasets is None:
+            raise ValueError(f"Dataset with the tag '{dataset_tag}' not found.")
+
+        return datasets
 
     def describe(self, dataset_name):
         """
