@@ -6,7 +6,7 @@ from giza_datasets import DatasetLoader
 
 def test_load_dataset_eager():
     loader = DatasetLoader()
-    df = loader.load("dataset1")
+    df = loader.load("tvl-fee-per-protocol")
     assert isinstance(df, pl.DataFrame)
 
 def test_dataset_not_in_hub():
