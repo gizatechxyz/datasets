@@ -5,7 +5,7 @@ from datasets import DatasetLoader
 # Usage example:
 loader = DatasetLoader()
 
-df = loader.load('dataset1')
+df = loader.load('tvl-fee-per-protocol')
 print(df)  # This will print a LazyFrame object
 
 # If you want to collect the results into a DataFrame, you can call .collect()
