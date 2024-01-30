@@ -3,6 +3,7 @@ import polars as pl
 
 from giza_datasets.constants import DATASET_HUB
 
+
 class DatasetLoader:
     """
     DatasetLoader is a class for loading datasets from Google Cloud Storage (GCS).
@@ -31,10 +32,10 @@ class DatasetLoader:
         parquet_files = []
 
         for file_info in all_files:
-            if file_info['type'] == 'directory':
-                parquet_files.extend(self._get_all_parquet_files(file_info['name']))
-            elif file_info['name'].endswith('.parquet'):
-                full_path = 'gs://' + file_info['name']
+            if file_info["type"] == "directory":
+                parquet_files.extend(self._get_all_parquet_files(file_info["name"]))
+            elif file_info["name"].endswith(".parquet"):
+                full_path = "gs://" + file_info["name"]
                 parquet_files.append(full_path)
         return parquet_files
 
@@ -78,12 +79,14 @@ class DatasetLoader:
 
         if not gcs_path:
             raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")
-        elif gcs_path.endswith('.parquet'):
+        elif gcs_path.endswith(".parquet"):
             with self.fs.open(gcs_path) as f:
                 df = pl.read_parquet(f, use_pyarrow=True)
         else:
             parquet_files = self._get_all_parquet_files(gcs_path)
             if not parquet_files:
-                raise ValueError("No .parquet files were found in the directory or subdirectories.")
+                raise ValueError(
+                    "No .parquet files were found in the directory or subdirectories."
+                )
             df = self._load_multiple_parquet_files(parquet_files)
         return df

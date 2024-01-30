@@ -9,6 +9,7 @@ def test_load_dataset_eager():
     df = loader.load("tvl-fee-per-protocol")
     assert isinstance(df, pl.DataFrame)
 
+
 def test_dataset_not_in_hub():
     loader = DatasetLoader()
     with pytest.raises(ValueError):
