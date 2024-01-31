@@ -2,10 +2,6 @@ import polars as pl
 import os
 import hashlib
 
-import os
-import hashlib
-import polars as pl
-
 class CacheManager:
     def __init__(self, cache_dir):
         """
