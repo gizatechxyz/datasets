@@ -1,24 +1,16 @@
 import polars as pl
 import pytest
 
-from giza_datasets import DatasetLoader
+from giza_datasets import DatasetsLoader
 
 
 def test_load_dataset_eager():
-    loader = DatasetLoader()
-    df = loader.load("dataset1", eager=True)
-    assert isinstance(df, pl.DataFrame)
-
-
-def test_load_dataset_lazy():
-    loader = DatasetLoader()
-    df = loader.load("dataset1", eager=False)
-    if not isinstance(df, pl.DataFrame):
-        df = df.collect()
+    loader = DatasetsLoader()
+    df = loader.load("tvl-fee-per-protocol")
     assert isinstance(df, pl.DataFrame)
 
 
 def test_dataset_not_in_hub():
-    loader = DatasetLoader()
+    loader = DatasetsLoader()
     with pytest.raises(ValueError):
-        loader.load("non_existent_dataset", eager=True)
+        loader.load("non_existent_dataset")

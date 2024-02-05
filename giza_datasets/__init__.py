@@ -1,4 +1,4 @@
 from giza_datasets.hub import DatasetsHub
-from giza_datasets.loaders import DatasetLoader
+from giza_datasets.loaders import DatasetsLoader
 
-__all__ = ["DatasetLoader", "DatasetsHub"]
+__all__ = ["DatasetsLoader", "DatasetsHub"]

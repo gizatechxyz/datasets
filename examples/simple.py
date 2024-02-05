@@ -1,12 +1,11 @@
 import polars as pl
 
-from datasets import DatasetLoader
+from datasets import DatasetsLoader
 
 # Usage example:
-loader = DatasetLoader()
+loader = DatasetsLoader()
 
-# Use eager=False to use the lazy API
-df = loader.load('dataset1', eager=False)
+df = loader.load('tvl-fee-per-protocol')
 print(df)  # This will print a LazyFrame object
 
 # If you want to collect the results into a DataFrame, you can call .collect()
