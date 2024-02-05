@@ -37,6 +37,13 @@ DATASET_HUB = [
         documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
     ),
     Dataset(
+        name="tokens-daily-prices-mcap-volume",
+        path="gs://datasets-giza/tokens_daily_prices_mcap_volume.parquet",
+        description="Daily tokens price, mcap and 24h volumes",
+        tags=["aggregated", "daily", "price", "Mcap", "Trade Volume"],
+        documentation="https://app.gitbook.com/o/hEO6HqxrZikLvldqIQyx/s/pl74PhvrIKrt4DXJOVTt/hub-pending/top-pools-apy-per-protocol",
+    ),
+    Dataset(
         name="tvl-per-project-tokens/project=aave-v2",
         path="gs://datasets-giza/TVL_per_project_tokens/project=aave-v2",
         description="Daily historical TVL of the tokens supported by aave-v2.",
