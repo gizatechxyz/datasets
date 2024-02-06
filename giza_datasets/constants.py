@@ -38,7 +38,7 @@ DATASET_HUB = [
     ),
     Dataset(
         name="tokens-daily-prices-mcap-volume",
-        path="gs://datasets-giza/tokens_daily_prices_mcap_volume.parquet",
+        path="gs://datasets-giza/tokens_daily_prices_mcap_volume/tokens_daily_prices_mcap_volume.parquet",
         description="Daily tokens price, mcap and 24h volumes",
         tags=["aggregated", "daily", "price", "Mcap", "Trade Volume"],
         documentation="https://datasets.gizatech.xyz/hub/aggregated-datasets/tokens-daily-information",
