@@ -198,14 +198,14 @@ DATASET_HUB = [
         documentation="https://datasets.gizatech.xyz/hub/aave/daily-exchange-rates-and-indexes-v3",
     ),
         Dataset(
-        name="aave-liquidationsV2",
+        name="aave-liquidationsv2",
         path="gs://datasets-giza/Aave/Aave_LiquidationsV2.parquet",
         description="Individual liquidations in Aave v2, including colleteral and lending values",
         tags=["DeFi", "Lending", "Aave-v2", "Ethereum", "Liquiditations"],
         documentation="https://datasets.gizatech.xyz/hub/aave/liquidations-v2",
     ),
         Dataset(
-        name="aave-liquidationsV3",
+        name="aave-liquidationsv3",
         path="gs://datasets-giza/Aave/Aave_LiquidationsV3.parquet",
         description="Individual liquidations in Aave v3, including colleteral and lending values",
         tags=["DeFi", "Lending", "Aave-v3", "Ethereum", "Liquiditations"],
