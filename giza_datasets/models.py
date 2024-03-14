@@ -39,6 +39,8 @@ task_tags = [
     "aggregated",
     "Deposits",
     "Withdraws",
+    "Liquiditations",
+    "Mcap",
 ]
 
 
