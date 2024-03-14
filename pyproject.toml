@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giza-datasets"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Fran Algaba <f.algaba@outlook.es>"]
 readme = "README.md"
@@ -12,7 +12,7 @@ include = ["datasets/*"]
 python = "^3.11"
 polars = "^0"
 gcsfs = "^2023.12.2.post1"
-pydantic = "^1"
+pydantic = "^2"
 rich = "^13"
 pyarrow = "^15"
 
