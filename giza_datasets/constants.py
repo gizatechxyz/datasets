@@ -2229,13 +2229,13 @@ DATASET_HUB = [
         path="gs://datasets-giza/Farcaster/Farcaster_Casts.parquet",
         description="Individual farcaster casts, between 2023-01 to 2023-03",
         tags=["Farcaster", "Social"],
-        documentation="https://datasets.gizatech.xyz/hub-pending/uniswap-v3-liquidity-distribution",
+        documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-casts",
     ),
     Dataset(
         name="farcaster-links",
         path="gs://datasets-giza/Farcaster/Farcaster_Links.parquet",
         description="Individual farcaster links, between 2023-01 to 2023-02",
         tags=["Farcaster", "Social"],
-        documentation="https://datasets.gizatech.xyz/hub-pending/uniswap-v3-liquidity-distribution",
+        documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-links",
     ),
 ]
