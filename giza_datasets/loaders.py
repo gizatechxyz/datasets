@@ -15,7 +15,11 @@ class DatasetsLoader:
         self.fs = gcsfs.GCSFileSystem(verify=False)
         self.dataset_hub = DATASET_HUB
         self.use_cache = use_cache
-        self.cache_dir = cache_dir if cache_dir is not None else os.path.join(os.path.expanduser("~"), "giza_datasets")
+        self.cache_dir = (
+            cache_dir
+            if cache_dir is not None
+            else os.path.join(os.path.expanduser("~"), "giza_datasets")
+        )
         self.cache_manager = CacheManager(self.cache_dir) if use_cache else None
 
     def _get_all_parquet_files(self, directory):
@@ -23,10 +27,10 @@ class DatasetsLoader:
         Recursively retrieves all the parquet file paths in the given directory.
 
         Args:
-            directory: The GCS directory to search for parquet files.
+            directory (str): The GCS directory to search for parquet files.
 
         Returns:
-            A list of full paths to all the parquet files found.
+            List[str]: A list of full paths to all the parquet files found.
         """
         all_files = self.fs.ls(directory, detail=True)
         parquet_files = []
@@ -44,10 +48,10 @@ class DatasetsLoader:
         Loads multiple parquet files into a single Polars DataFrame.
 
         Args:
-            file_paths: A list of file paths to load.
+            file_paths (List[str]): A list of file paths to load.
 
         Returns:
-            A concatenated Polars DataFrame containing data from all files.
+            polars.DataFrame: A concatenated Polars DataFrame containing data from all files.
         """
         dfs = []
         for file_path in file_paths:
@@ -55,53 +59,101 @@ class DatasetsLoader:
                 df = pl.read_parquet(f, use_pyarrow=True)
             dfs.append(df)
         concatenated_df = pl.concat(dfs, how="diagonal_relaxed")
-
         return concatenated_df
 
-    def load(self, dataset_name, cache_dir = None, eager = False):
+    def _dataset_exists_in_gcs(self, dataset_name):
         """
-        Loads a dataset by name, either as a single file or multiple files.
+        Checks if a dataset exists in GCS by looking for its path in the dataset hub.
 
         Args:
-            dataset_name: The name of the dataset to load.
+            dataset_name (str): The name of the dataset to check.
 
         Returns:
-            A Polars DataFrame containing the loaded dataset.
-
-        Raises:
-            ValueError: If the dataset name is not found or if no parquet files are found.
+            str or None: The GCS path of the dataset if found, otherwise None.
         """
-        specific_cache_manager = None
-        if self.use_cache:
-            if cache_dir is not None:
-                specific_cache_manager = CacheManager(cache_dir)
-                cached_data = specific_cache_manager.load_from_cache(dataset_name, eager)
-            else:
-                cached_data = self.cache_manager.load_from_cache(dataset_name, eager)
-            if cached_data is not None:
-                return cached_data
-            
         gcs_path = None
         for dataset in self.dataset_hub:
             if dataset.name == dataset_name:
                 gcs_path = dataset.path
                 break
-        if eager:
-            raise ValueError(f"Dataset '{dataset_name}' is not cached yet or you have use_cache=False. Eager mode is only available for cached datasets")
-        if not gcs_path:
-            raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")
-        elif gcs_path.endswith(".parquet"):
-            with self.fs.open(gcs_path) as f:
-                df = pl.read_parquet(f, use_pyarrow=True)
-        else:
-            parquet_files = self._get_all_parquet_files(gcs_path)
-            if not parquet_files:
-                raise ValueError(
-                    "No .parquet files were found in the directory or subdirectories."
-                )
-            df = self._load_multiple_parquet_files(parquet_files)
-        
+        return gcs_path
+
+    def load(self, dataset_name, eager=False):
+        """
+        Loads a dataset by name, either from cache or GCS. Supports eager and lazy loading.
+
+        Args:
+            dataset_name (str): The name of the dataset to load.
+            eager (bool): If True, loads the dataset eagerly; otherwise, loads lazily.
+
+        Returns:
+            polars.DataFrame: The loaded dataset as a Polars DataFrame.
+
+        Raises:
+            ValueError: If the dataset cannot be found in cache or GCS, or if eager loading is requested for a non-cached dataset.
+        """
         if self.use_cache:
-            cache_manager_to_use = specific_cache_manager if specific_cache_manager is not None else self.cache_manager
-            cache_manager_to_use.save_to_cache(df, dataset_name)
+            # Check if the dataset is already cached
+            cached_data = self.cache_manager.load_from_cache(dataset_name, eager)
+            if cached_data is not None:
+                print(f"Loading dataset {dataset_name} from cache.")
+                return cached_data
+            else:
+                print(
+                    f"Dataset {dataset_name} not found in cache. Downloading from GCS."
+                )
+
+            gcs_path = self._dataset_exists_in_gcs(dataset_name)
+
+            if not gcs_path:
+                raise ValueError(f"Dataset name '{dataset_name}' not found.")
+
+            local_file_path = os.path.join(self.cache_dir, f"{dataset_name}")
+
+            if gcs_path.endswith(".parquet"):
+                self.fs.get(gcs_path, local_file_path)
+            else:
+                self.fs.get(gcs_path, local_file_path, recursive=True)
+
+            df = self.cache_manager.load_from_cache(dataset_name, eager)
+        else:
+            if eager:
+                raise ValueError("Eager mode is only available for cached datasets")
+            gcs_path = self._dataset_exists_in_gcs(dataset_name)
+            if not gcs_path:
+                raise ValueError(f"Dataset name '{dataset_name}' not found in Giza.")
+            elif gcs_path.endswith(".parquet"):
+                with self.fs.open(gcs_path) as f:
+                    df = pl.read_parquet(f, use_pyarrow=True)
+            else:
+                parquet_files = self._get_all_parquet_files(gcs_path)
+                if not parquet_files:
+                    raise ValueError(
+                        "No .parquet files were found in the directory or subdirectories."
+                    )
+                df = self._load_multiple_parquet_files(parquet_files)
+
         return df
+
+    def set_cache_dir(self, new_cache_dir):
+        """
+        Sets a new cache directory for the CacheManager and updates the instance cache directory.
+
+        Args:
+            new_cache_dir (str): The new directory path for caching datasets.
+        """
+        self.cache_dir = new_cache_dir
+        if self.use_cache:
+            self.cache_manager = CacheManager(self.cache_dir)
+
+    def clear_cache(self):
+        """
+        Removes all files in the cache directory through the CacheManager and prints the count.
+        """
+        if self.use_cache and self.cache_manager:
+            deleted_files_count = self.cache_manager.clear_cache()
+            print(
+                f"{deleted_files_count} datasets have been cleared from the cache directory."
+            )
+        else:
+            print("Cache management is not enabled or CacheManager is not initialized.")
