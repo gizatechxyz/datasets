@@ -18,7 +18,7 @@ class DatasetsLoader:
         self.cache_dir = (
             cache_dir
             if cache_dir is not None
-            else os.path.join(os.path.expanduser("~"), "giza_datasets")
+            else os.path.join(os.path.expanduser("~"), ".cache/giza_datasets")
         )
         self.cache_manager = CacheManager(self.cache_dir) if use_cache else None
 
