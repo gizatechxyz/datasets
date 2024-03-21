@@ -2238,4 +2238,11 @@ DATASET_HUB = [
         tags=["Farcaster", "Social"],
         documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-links",
     ),
+    Dataset(
+        name="farcaster-reactions",
+        path="gs://datasets-giza/Farcaster/Farcaster_Reactions.parquet",
+        description="Individual farcaster reactionss, between 2023-01-01 to 2023-01-04",
+        tags=["Farcaster", "Social"],
+        documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-reactions",
+    ),
 ]
