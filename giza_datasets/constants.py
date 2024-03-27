@@ -2245,4 +2245,18 @@ DATASET_HUB = [
         tags=["Farcaster", "Social"],
         documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-reactions",
     ),
+    Dataset(
+        name="pancakeswap-daily-volume",
+        path="gs://datasets-giza/PancakeSwap/pancakeswap_daily_volume.parquet",
+        description="Daily PancakeSwap trade volume in USD, per pool ",
+        tags=["PancakeSwap", "Trade Volume", "daily", "DeFi", "DEX"],
+        documentation="https://datasets.gizatech.xyz/hub/pancakeswap/daily-trade-volume",
+    ),
+    Dataset(
+        name="curve-daily-volume-fees",
+        path="gs://datasets-giza/Curve/curve_daily_volume_fees.parquet",
+        description="Daily Curve trade volume and fees generated in USD, per pool",
+        tags=["Curve","Trade Volume","Fees" ,"daily", "DeFi", "DEX"],
+        documentation="https://datasets.gizatech.xyz/hub/curve/daily-trade-volume-and-fees",
+    ),
 ]
