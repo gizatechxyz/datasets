@@ -2207,7 +2207,7 @@ DATASET_HUB = [
         name="uniswapv3-ethereum-usdc-bob-100-current-ticks",
         path="gs://datasets-giza/UniswapV3/ethereum/USDC_BOB_100/merged_ticks_15832657_16136657.parquet",
         description="Current ticks of Uniswap V3 USDC-BOB pool with 0.01 % fee in 1000 blocks intervals",
-        tags=["Uniswap-v3", "Liquidity", "Ethereum", "DeFi", ""],
+        tags=["Uniswap-v3", "Liquidity", "Ethereum", "DeFi", "DEX"],
         documentation="https://datasets.gizatech.xyz/hub-pending/uniswap-v3-liquidity-distribution",
     ),
     Dataset(
