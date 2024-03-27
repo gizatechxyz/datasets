@@ -2207,7 +2207,7 @@ DATASET_HUB = [
         name="uniswapv3-ethereum-usdc-bob-100-current-ticks",
         path="gs://datasets-giza/UniswapV3/ethereum/USDC_BOB_100/merged_ticks_15832657_16136657.parquet",
         description="Current ticks of Uniswap V3 USDC-BOB pool with 0.01 % fee in 1000 blocks intervals",
-        tags=["Uniswap-v3", "Liquidity", "Ethereum", "DeFi", "DEX"],
+        tags=["Uniswap-v3", "Liquidity", "Ethereum", "DeFi", ""],
         documentation="https://datasets.gizatech.xyz/hub-pending/uniswap-v3-liquidity-distribution",
     ),
     Dataset(
@@ -2244,5 +2244,19 @@ DATASET_HUB = [
         description="Individual farcaster reactionss, between 2023-01-01 to 2023-01-04",
         tags=["Farcaster", "Social"],
         documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-reactions",
+    ),
+    Dataset(
+        name="pancakeswap-daily-volume",
+        path="gs://datasets-giza/PancakeSwap/pancakeswap_daily_volume.parquet",
+        description="Daily PancakeSwap trade volume in USD, per pool ",
+        tags=["PancakeSwap", "Trade Volume", "daily", "DeFi", "DEX"],
+        documentation="https://datasets.gizatech.xyz/hub/pancakeswap/pancakeswap-daily-volume",
+    ),
+    Dataset(
+        name="curve-daily-volume-fees",
+        path="gs://datasets-giza/Curve/curve_daily_volume_fees.parquet",
+        description="Daily Curve trade volume and fees generated in USD, per pool",
+        tags=["Curve","Trade Volume","Fees" ,"daily", "DeFi", "DEX"],
+        documentation="https://datasets.gizatech.xyz/hub/curve/curve-daily-volume-fees",
     ),
 ]
