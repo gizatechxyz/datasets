@@ -16,6 +16,7 @@ protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + [
     "Uniswap-v3",
     "Yearn-v2",
     "Farcaster",
+    "Lens",
 ]
 network_tags = [
     "Ethereum",

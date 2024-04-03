@@ -2227,22 +2227,29 @@ DATASET_HUB = [
     Dataset(
         name="farcaster-casts",
         path="gs://datasets-giza/Farcaster/Farcaster_Casts.parquet",
-        description="Individual farcaster casts, between 2023-01 to 2023-03",
+        description="Individual farcaster casts, between 2024-01 to 2024-03",
         tags=["Farcaster", "Social"],
         documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-casts",
     ),
     Dataset(
         name="farcaster-links",
         path="gs://datasets-giza/Farcaster/Farcaster_Links.parquet",
-        description="Individual farcaster links, between 2023-01 to 2023-02",
+        description="Individual farcaster links, between 2024-01 to 2024-02",
         tags=["Farcaster", "Social"],
         documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-links",
     ),
     Dataset(
         name="farcaster-reactions",
         path="gs://datasets-giza/Farcaster/Farcaster_Reactions.parquet",
-        description="Individual farcaster reactionss, between 2023-01-01 to 2023-01-04",
+        description="Individual farcaster reactionss, between 2024-01-01 to 2024-01-04",
         tags=["Farcaster", "Social"],
         documentation="https://datasets.gizatech.xyz/hub/farcaster/individual-reactions",
+    ),
+    Dataset(
+        name="lens-calls",
+        path="gs://datasets-giza/Lens/Lens_Calls.parquet",
+        description="Individual lens calls, between 2024-01-01 to 2024-04-04",
+        tags=["Lens", "Social"],
+        documentation="https://datasets.gizatech.xyz/hub/lens/individual-calls",
     ),
 ]
