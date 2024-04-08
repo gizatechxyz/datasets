@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from giza_datasets.defillama_constants import DEFILLAMA_SUPPORTED_PROJECTS
 
 sector_tags = ["DeFi","Social"]
-application_tags = ["Liquid Staking", "Dexes", "Yield", "Lending", "Yield Aggregator"]
+application_tags = ["Liquid Staking", "DEX", "Yield", "Lending", "Yield Aggregator"]
 protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + [
     "Aave-v2",
     "Aave-v3",
@@ -17,6 +17,8 @@ protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + [
     "Yearn-v2",
     "Farcaster",
     "Lens",
+    "PancakeSwap",
+    "Curve",
 ]
 network_tags = [
     "Ethereum",
