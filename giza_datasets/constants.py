@@ -2287,10 +2287,17 @@ DATASET_HUB = [
         tags=["Curve","Trade Volume","Fees" ,"daily", "DeFi", "DEX"],
         documentation="https://datasets.gizatech.xyz/hub/curve/daily-trade-volume-and-fees",
     ),
-        Dataset(
+    Dataset(
         name="gora-competition-training",
         path="gs://datasets-giza/Rocifi/gora_competition_training.parquet",
         description="Training data for the Gora competition",
+        tags=["Lending"],
+        documentation="",
+    ),
+    Dataset(
+        name="gora-competition-evaluation",
+        path="gs://datasets-giza/Rocifi/gora_competition_evaluation.parquet",
+        description="Evaluation Data for the Gora competition",
         tags=["Lending"],
         documentation="",
     ),
