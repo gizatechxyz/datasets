@@ -1,5 +1,5 @@
-from giza_datasets.defillama_constants import DEFILLAMA_SUPPORTED_PROJECTS
-from giza_datasets.models import Dataset
+from giza.datasets.defillama_constants import DEFILLAMA_SUPPORTED_PROJECTS
+from giza.datasets.models import Dataset
 
 APPLICATION_TAGS = ["Liquid Staking", "Dexes", "Yield", "Lending", "Yield Aggregator"]
 
@@ -2284,7 +2284,7 @@ DATASET_HUB = [
         name="curve-daily-volume-fees",
         path="gs://datasets-giza/Curve/curve_daily_volume_fees.parquet",
         description="Daily Curve trade volume and fees generated in USD, per pool",
-        tags=["Curve","Trade Volume","Fees" ,"daily", "DeFi", "DEX"],
+        tags=["Curve", "Trade Volume", "Fees", "daily", "DeFi", "DEX"],
         documentation="https://datasets.gizatech.xyz/hub/curve/daily-trade-volume-and-fees",
     ),
     Dataset(
@@ -2302,4 +2302,3 @@ DATASET_HUB = [
         documentation="",
     ),
 ]
-

@@ -2,9 +2,9 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from giza_datasets.defillama_constants import DEFILLAMA_SUPPORTED_PROJECTS
+from giza.datasets.defillama_constants import DEFILLAMA_SUPPORTED_PROJECTS
 
-sector_tags = ["DeFi","Social"]
+sector_tags = ["DeFi", "Social"]
 application_tags = ["Liquid Staking", "DEX", "Yield", "Lending", "Yield Aggregator"]
 protocol_tags = DEFILLAMA_SUPPORTED_PROJECTS + [
     "Aave-v2",

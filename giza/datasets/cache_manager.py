@@ -1,6 +1,7 @@
+import os
+
 import polars as pl
 import pyarrow.dataset as ds
-import os
 
 
 class CacheManager:
