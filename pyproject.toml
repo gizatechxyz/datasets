@@ -5,8 +5,7 @@ description = ""
 authors = ["Fran Algaba <f.algaba@outlook.es>"]
 readme = "README.md"
 license = "MIT"
-include = ["datasets/*"]
-
+packages = [{include = "giza"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"

@@ -22,7 +22,7 @@ To get started with Giza Datasets, follow the steps below:
    ```
 2. Import the `DatasetsLoader` class and initialize it:
    ```python
-   from giza_datasets import DatasetsLoader
+   from giza.datasets import DatasetsLoader
    loader = DatasetsLoader()
    ```
 3. Optional: Depending on your device's configuration, it may be necessary to provide SSL certificates to verify the authenticity of HTTPS connections. You can ensure that all these certifications are correct by executing the following line of code:
@@ -56,7 +56,7 @@ To get started with the `DatasetsHub` class, follow the steps below:
 
 1. Import the `DatasetsHub` class and initialize it:
    ```python
-   from giza_datasets import DatasetsHub
+   from giza.datasets import DatasetsHub
    hub = DatasetsHub()
    ```
 2. Use the `show` method to print a table of all datasets in the hub:

@@ -1,8 +1,10 @@
+import os
+
 import gcsfs
 import polars as pl
-import os
-from giza_datasets.constants import DATASET_HUB
-from giza_datasets.cache_manager import CacheManager
+
+from giza.datasets.cache_manager import CacheManager
+from giza.datasets.constants import DATASET_HUB
 
 
 class DatasetsLoader:
@@ -18,7 +20,7 @@ class DatasetsLoader:
         self.cache_dir = (
             cache_dir
             if cache_dir is not None
-            else os.path.join(os.path.expanduser("~"), ".cache/giza_datasets")
+            else os.path.join(os.path.expanduser("~"), ".cache/giza.datasets")
         )
         self.cache_manager = CacheManager(self.cache_dir) if use_cache else None
 

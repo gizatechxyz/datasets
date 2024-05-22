@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 
-from giza_datasets.constants import DATASET_HUB
+from giza.datasets.constants import DATASET_HUB
 
 
 class DatasetsHub:
