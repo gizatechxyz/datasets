@@ -14,7 +14,8 @@ class DatasetsLoader:
     """
 
     def __init__(self, use_cache=True, cache_dir=None):
-        self.fs = gcsfs.GCSFileSystem(verify=False)
+        # Token is set to "anon" to allow anonymous access to GCS as bucket should be public
+        self.fs = gcsfs.GCSFileSystem(verify=False, token="anon")
         self.dataset_hub = DATASET_HUB
         self.use_cache = use_cache
         self.cache_dir = (
